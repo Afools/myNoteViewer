@@ -4,6 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <link rel="icon" herf="%PUBLIC_URL/ICON.png" type="image/x-icon"/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
