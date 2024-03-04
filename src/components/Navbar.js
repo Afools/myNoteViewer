@@ -19,15 +19,15 @@ export default function NavBar(props){
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className='me-auto flex-row' navbarScroll>
                         <Nav.Link as={Link} to='/'>Home</Nav.Link>
-                        {/* <Nav.Link as={Link} to='/Tech'>Tech</Nav.Link> */}
                         <NavDropdown title='TECH' id="responsive-navbar-dropdown">
-                            <NavDropdown.Item to='/AI'>AI</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/AI'>AI</NavDropdown.Item>
                             <NavDropdown.Item to='/Front'>Front</NavDropdown.Item>
                             <NavDropdown.Item to='/Back'>Back</NavDropdown.Item>
+                            <NavDropdown.Item to='/Project'>Project</NavDropdown.Item>
                         </NavDropdown>
-                        <NavDropdown title='ACG' id="responsive-navbar-dropdown">
+                        <NavDropdown title='Entertainment' id="responsive-navbar-dropdown">
                             <NavDropdown.Item to='/Anime'>Anime</NavDropdown.Item>
-                            <NavDropdown.Item to='/Comic_and_Novel'>Comic and Novel</NavDropdown.Item>
+                            <NavDropdown.Item to='/Comic_and_Novel'>Novel</NavDropdown.Item>
                             <NavDropdown.Item to='/Game'>Game</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>

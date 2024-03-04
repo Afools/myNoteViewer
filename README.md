@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# 开发日志
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 2024/3/1
 
-## Available Scripts
+完成了 react-bootstrap 中 Navbar 系列的基础学习，完成 [Navbar.js](./src/components/Navbar.js) 组件的基础编写。
 
-In the project directory, you can run:
+开始编写 [Home.js](./src/components/Home.js)，学习 bootstrap 的网格式布局。
 
-### `npm start`
+### bootstrap 网格布局
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+使用 bootstrap 前要在 APP.js 或 index.js 中添加以下代码
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```js
+> import "bootstrap/dist/css/bootstrap.min.css";
+```
 
-### `npm test`
+网格布局通过 Container,Row,Col 三种组件进行布局。Container 中只能包含 Row，Row 中只能包含 Col。每一个 Row 将屏幕分割为 12 块，通过布局设计决定每一个 Col 能占据多少块。
+可以通过添加**_xs,sm,md,lg,xl,xxl_**几种预设计来对不同尺寸的屏幕分别设计布局。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+常用 API 如下
 
-### `npm run build`
+```js
+    <Col md={{order:1}}/> # order 来决定组件的相对顺序，没有设定order的组件按html中的编辑顺序进行渲染
+    <Col md={{span:3,offset:3}}/> # span 决定组件的宽 offset 决定组件的偏置 此组件表示组件左边空置3块，组件本身占用3块
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### bootstrap Navbar
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Navbar 需要`import {Navbar,Nav,Dropdown} from react-bootstrap`。以下是一个包括搜索栏和下拉式导航的基础导航栏。
 
-### `npm run eject`
+```html
+<Navbar fixed="top" expand="md" className="navbar">
+  <Container fluid>
+    <Navbar.Brand>LJ</Navbar.Brand>
+    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+    <Navbar.Collapse id="responsive-navbar-nav">
+      <nav className="me-auto flex-row" navbarScroll>
+        <Nav.Link as="{Link}" to="/">Home</Nav.Link>
+        <NavDropdown title="Entertainment" id="responsive-navbar-dropdown">
+          <NavDropdown.Item to="/Anime">Anime</NavDropdown.Item>
+          <NavDropdown.Item to="/Comic_and_Novel">Novel</NavDropdown.Item>
+        </NavDropdown>
+      </nav>
+      <form className="d-flex">
+        <Form.Control
+          type="search"
+          placeholder="Search"
+          className="me-2"
+          aria-label="Search"
+        />
+        <button variant="outline-success">Search</button>
+      </form>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 2024/3/4
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+开始进行 AI 板块的编程，准备使用 Card 组件进行项目编排。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```jsx
+<Card style={{ width: "18rem" }}>
+  <Card.Img variant="top" src="./cancer_detection.png" />{" "}
+  /*路径相对于public文件而不是src文件*/
+  <CardBody>
+    <Card.Title>癌栓检测</Card.Title>
+    <Card.Body>
+      该项目使用retinaNet对病理切片进行检测，mAP@0.5达到80.3%
+    </Card.Body>
+    <Card.Link href="****">Github</Card.Link>
+  </CardBody>
+</Card>
+```

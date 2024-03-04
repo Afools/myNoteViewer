@@ -5,7 +5,9 @@ import {
   Routes
 } from "react-router-dom"
 import NavBar from './components/Navbar';
-import Home from './components/Home'
+import Home from './components/Home';
+import Footer from './components/Footer';
+import AI from './components/AI';
 import { useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -20,16 +22,18 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header"/>
-      <div id={load? "preload":"preload-non"}/>
       <Router>
-        <NavBar/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-        </Routes>
+        <div className="App">
+          <header className="App-header"/>
+          <div id={load? "preload":"preload-non"}/>
+          <NavBar/>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/AI' element={<AI/>}/>
+          </Routes>
+          <Footer/>
+        </div>
       </Router>
-    </div>
   );
 }
 

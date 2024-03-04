@@ -22,11 +22,12 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-.App{
-    background-color: #f1f1f1;
-}
-.Navbar{
-    background-color: transparent;
+/* .App{
+    background-color: white;
+} */
+.navbar{
+    background-color: #c5c5c5 !important;
+    color:#ffff !important;
 }
 .home-section{
   position: relative;
@@ -34,7 +35,46 @@
   background: transparent;
   background-position: top center;
   background-repeat: no-repeat;
-  margin-top: 50px;
+  /* margin-top: 50px;
+  margin-bottom: 50px; */
+  height: 80vh;
+  width: 100%;
   padding-bottom: 30px !important;
-  padding-top: 30px !important;
+  padding-top: 70px !important;
+}
+.github-icon{
+    mask-image: url(./Asset/github-mark-small.svg);
+    display: block;
+    width: 21px;
+    height: 21px;
+    background-color: #0c0c0c;
+    mask-position: center;
+}
+footer{
+    width: 100vw !important;
+    position:relative;
+    /* color:rgb(75, 75, 75); */
+    background-color: #c5c5c5 !important;
+    height:20vh;
+    padding-top: 30px;
+}
+.visually-hidden {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+}
+
+.ai-main-page{
+    height:80vh !important;
+    width:100%;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
 }
