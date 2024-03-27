@@ -18,17 +18,17 @@ export default function NavBar(props){
                 <Navbar.Toggle aria-controls='responsive-navbar-nav'/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className='me-auto flex-row' navbarScroll>
-                        <Nav.Link as={Link} to='/'>Home</Nav.Link>
+                        <Nav.Link as={Link} to='/myTestSite/'>Home</Nav.Link>
                         <NavDropdown title='TECH' id="responsive-navbar-dropdown">
-                            <NavDropdown.Item as={Link} to='/AI'>AI</NavDropdown.Item>
-                            <NavDropdown.Item to='/Front'>Front</NavDropdown.Item>
-                            <NavDropdown.Item to='/Back'>Back</NavDropdown.Item>
-                            <NavDropdown.Item to='/Project'>Project</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/myTestSite/AI'>AI</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/myTestSite/Front'>Front</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/myTestSite/Back'>Back</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/myTestSite/Project'>Project</NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title='Entertainment' id="responsive-navbar-dropdown">
-                            <NavDropdown.Item to='/Anime'>Anime</NavDropdown.Item>
-                            <NavDropdown.Item to='/Comic_and_Novel'>Novel</NavDropdown.Item>
-                            <NavDropdown.Item to='/Game'>Game</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/myTestSite/Anime'>Anime</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/myTestSite/Comic_and_Novel'>Novel</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/myTestSite/Game'>Game</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Form className="d-flex">

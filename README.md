@@ -74,3 +74,59 @@ Navbar 需要`import {Navbar,Nav,Dropdown} from react-bootstrap`。以下是一�
   </CardBody>
 </Card>
 ```
+
+## 2024/3/25
+
+申请了一个 github token 用作建立图床`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`
+尝试失败，无论`https://github.com/user/repository/raw/main/path/img.png`还是`https://raw.githubusercontainer.com/user/repository/path/img.png`都无法显示图片。
+
+插入图片本地可见但实际网页中无法加载。
+![png](https://vip.helloimg.com/i/2024/03/25/660126a5573f1.png)
+测试使用公开图床，成功显示图片。
+![png](https://raw.githubusercontent.com/Afools/pictureRepo/main/cancer_detection.png)
+使用 github 充当图床，新建的 repository 且图片放在根目录，成功显示图片。
+
+经验证，在实际网页中，方法 2 成功显示图片
+
+## 2024/3/25
+
+进行下一步开发计划
+
+1. 增加项目卡片
+2. 增加项目日志和学习笔记，学习网页插入 markdown 页面方法
+3. 增加 ACG 页面卡片
+4. 学习其他 CSS 渲染，增加页面美观度
+
+## 2024/3/27
+
+加入一些 css 动画效果
+
+### 数标移动到卡片时卡片上浮
+
+```css
+.item-card {
+  width: 18rem;
+  height: 28rem;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+}
+
+.item-card:hover {
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  -moz-transform: translate(-2px, -2px);
+  -webkit-transform: translate(-2px, -2px);
+  -o-transform: translate(-2px, -2px);
+  -ms-transform: translate(-2px, -2px);
+  transform: translate(-2px, -2px);
+  -webkit-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
+  -moz-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
+  -o-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
+  box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
+}
+```
+
+TODO:计划建立自用的 CSS 动画效果库  
+尝试修改字体，在 CSS 中用.APP 选择器声名`font-family`，可声名一个优先级从高到低的字体列表。

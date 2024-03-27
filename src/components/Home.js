@@ -8,7 +8,7 @@ export default function Home(props){
             <Row>
                 <Col md={6} className="home-header">
                     <h1 style={{paddingBottom:15}} className="heading">
-                        Welcom to the site of a Fool.{/* TODO add title word */}
+                        Welcom to the AFOOL's block.
                         <span className="wave" role="img" aria-labelledby="wave">
                             👋🏻
                         </span>

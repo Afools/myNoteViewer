@@ -8,6 +8,7 @@ import NavBar from './components/Navbar';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import AI from './components/AI';
+import Anime from './components/Anime';
 import { useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -29,7 +30,9 @@ function App() {
           <NavBar/>
           <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/AI' element={<AI/>}/>
+            <Route path='/myTestSite/' element={<Home/>}/>
+            <Route path='/myTestSite/AI' element={<AI/>}/>
+            <Route path='/myTestSite/Anime' element={<Anime/>} />
           </Routes>
           <Footer/>
         </div>

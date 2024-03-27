@@ -1,3 +1,11 @@
+@font-face {
+    font-family: Arial,"黑体","Microsoft YaHei";
+    /* font-family: 'Arial','黑体'; */
+    src: url();
+}
+.App {
+    font-family: Arial,"Microsoft YaHei";
+}
 .Mainpage{
     display: flex;
     flex-direction: column;
@@ -9,7 +17,9 @@
     font-size: calc(10px + 2vmin);
     text-align: center;
 }
-
+.page-title{
+    color: #317e4a
+}
 #preload{
     position: fixed;
     top: 0;
@@ -77,4 +87,44 @@ footer{
     width:100%;
     margin-top: 10vh;
     margin-bottom: 5vh;
+}
+
+.anime-main-page{
+    height:80vh !important;
+    width:100%;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+
+}
+
+.card-img{
+    width:18rem;
+    height:20rem;
+    position: relative;
+    box-sizing: border-box;
+    outline: none;
+
+}
+
+.item-card{
+    width:18rem;
+    height:28rem;
+    -webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+}
+
+.item-card:hover{
+    -webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	-moz-transform: translate(-2px,-2px);
+	-webkit-transform: translate(-2px,-2px);
+	-o-transform: translate(-2px,-2px);
+	-ms-transform: translate(-2px, -2px);
+	transform: translate(-2px,-2px);
+	-webkit-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
+	-moz-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
+	-o-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
+	box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
 }
