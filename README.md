@@ -15,7 +15,7 @@
 ```
 
 网格布局通过 Container,Row,Col 三种组件进行布局。Container 中只能包含 Row，Row 中只能包含 Col。每一个 Row 将屏幕分割为 12 块，通过布局设计决定每一个 Col 能占据多少块。
-可以通过添加**_xs,sm,md,lg,xl,xxl_**几种预设计来对不同尺寸的屏幕分别设计布局。
+可以通过添加*xs,sm,md,lg,xl,xxl*几种预设计来对不同尺寸的屏幕分别设计布局。
 
 常用 API 如下
 
@@ -81,10 +81,10 @@ Navbar 需要`import {Navbar,Nav,Dropdown} from react-bootstrap`。以下是一�
 尝试失败，无论`https://github.com/user/repository/raw/main/path/img.png`还是`https://raw.githubusercontainer.com/user/repository/path/img.png`都无法显示图片。
 
 插入图片本地可见但实际网页中无法加载。
-![png](https://vip.helloimg.com/i/2024/03/25/660126a5573f1.png)
-测试使用公开图床，成功显示图片。
-![png](https://raw.githubusercontent.com/Afools/pictureRepo/main/cancer_detection.png)
-使用 github 充当图床，新建的 repository 且图片放在根目录，成功显示图片。
+
+1. 测试使用公开图床，成功显示图片。
+2. ![png](https://raw.githubusercontent.com/Afools/pictureRepo/main/cancer_detection.png)  
+   使用 github 充当图床，新建的 repository 且图片放在根目录，成功显示图片。
 
 经验证，在实际网页中，方法 2 成功显示图片
 
@@ -130,3 +130,40 @@ Navbar 需要`import {Navbar,Nav,Dropdown} from react-bootstrap`。以下是一�
 
 TODO:计划建立自用的 CSS 动画效果库  
 尝试修改字体，在 CSS 中用.APP 选择器声名`font-family`，可声名一个优先级从高到低的字体列表。
+TODO 在添加日志功能后，完善搜索功能  
+通过在 css 中添加`user-select:none`可以使文本内容不能被选中。
+
+## 2024/3/28
+
+经过一系列学习，发现在纯前端环境下很难做到读取本地文本文件并渲染。决定转换方向如下：  
+将笔记上传到 Github 中并在个人网站中只提供目录链接和关键词。
+
+今天增加了 Note 页的手风琴侧边栏。使用 bootstrap 的 Accordion 组件。代码如下
+
+```js
+<Accordion>
+  <Nav className="flex-column">
+    <Accordion.Item eventKey="0">
+      <Accordion.Header>Front</Accordion.Header>
+      <Accordion.Collapse eventKey="0">
+        <Nav.Link>React</Nav.Link>
+      </Accordion.Collapse>
+      <Accordion.Collapse eventKey="0">
+        <Nav.Link>Bootstrap</Nav.Link>
+      </Accordion.Collapse>
+    </Accordion.Item>
+    <Accordion.Item eventKey="1">
+      <Accordion.Header>Back End</Accordion.Header>
+      <Accordion.Collapse eventKey="1">
+        <Nav.Link>Spring</Nav.Link>
+      </Accordion.Collapse>
+    </Accordion.Item>
+    <Accordion.Item eventKey="2">
+      <Nav.Link to="/myTestSite/Note-otherproject">Other</Nav.Link>
+    </Accordion.Item>
+  </Nav>
+</Accordion>
+```
+
+通过将 Accordion 和 Nav 组件结合得到的侧边栏导航。
+使用 ListGroup 组件构建目录列表。通过 onClick 实现跳转，通过添加`style={{cursor:"pointer"}}`改变鼠标指针状态
