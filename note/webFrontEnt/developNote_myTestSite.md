@@ -251,4 +251,4 @@ export default function SideNav(props) {
 遇到了与上传图片相同的问题，本地的笔记无法在 GitHub page 中获得，尝试通过 GitHub 链接进行抓取，但是需要 token，且临时 token 具有时效性。
 
 尝试生成 token：'\*\*\*' 失败，
-尝试将 note 上传至图床库进行尝试 **成功显示**。
+尝试将 note 上传至图床库进行尝试
