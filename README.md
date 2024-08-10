@@ -77,7 +77,7 @@ Navbar 需要`import {Navbar,Nav,Dropdown} from react-bootstrap`。以下是一�
 
 ## 2024/3/25
 
-申请了一个 github token 用作建立图床`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`
+申请了一个 github token 用作建立图床
 尝试失败，无论`https://github.com/user/repository/raw/main/path/img.png`还是`https://raw.githubusercontainer.com/user/repository/path/img.png`都无法显示图片。
 
 插入图片本地可见但实际网页中无法加载。
@@ -130,7 +130,7 @@ Navbar 需要`import {Navbar,Nav,Dropdown} from react-bootstrap`。以下是一�
 
 TODO:计划建立自用的 CSS 动画效果库  
 尝试修改字体，在 CSS 中用.APP 选择器声名`font-family`，可声名一个优先级从高到低的字体列表。
-TODO 在添加日志功能后，完善搜索功能  
+TODO 在添加日志功能后，完善搜索功能 搜索功能可能需要后端支持，视进度决定是否完成。
 通过在 css 中添加`user-select:none`可以使文本内容不能被选中。
 
 ## 2024/3/28
@@ -167,3 +167,88 @@ TODO 在添加日志功能后，完善搜索功能
 
 通过将 Accordion 和 Nav 组件结合得到的侧边栏导航。
 使用 ListGroup 组件构建目录列表。通过 onClick 实现跳转，通过添加`style={{cursor:"pointer"}}`改变鼠标指针状态
+
+## 2024/3/29
+
+将昨天完成的 Accordion 组件化，通过 items 变量直接进行编辑
+
+```js
+function SideNavSubItem(props) {
+  return (
+    <Accordion.Collapse eventKey={props.eventKey}>
+      <Nav.Link>{props.title}</Nav.Link>
+    </Accordion.Collapse>
+  );
+}
+
+function SideNavItem(props) {
+  if (!props.subItems || props.subItems.length === 0) {
+    return (
+      <Accordion.Item eventKey={props.eventKey}>
+        <Nav.Link flush>{props.title}</Nav.Link>
+      </Accordion.Item>
+    );
+  }
+  return (
+    <Accordion.Item eventKey={props.eventKey}>
+      <Accordion.Header>{props.title}</Accordion.Header>
+      {props.subItems.map((subItem, index) => (
+        <SideNavSubItem key={index} {...subItem} />
+      ))}
+    </Accordion.Item>
+  );
+}
+
+export default function SideNav(props) {
+  const items = [
+    {
+      title: "Front",
+      eventKey: "0",
+      subItems: [
+        { title: "React", eventKey: "0" },
+        { title: "Bootstrap", eventKey: "0" },
+      ],
+    },
+    {
+      title: "Back End",
+      eventKey: "1",
+      subItems: [{ title: "Spring", eventKey: "1" }],
+    },
+    {
+      title: "Other",
+      eventKey: "2",
+      subItems: [],
+    },
+  ];
+  const sideNavHtml = (
+    <Accordion>
+      <Nav className="flex-column">
+        {items.map((item, index) => (
+          <SideNavItem key={index} {...item} />
+        ))}
+      </Nav>
+    </Accordion>
+  );
+  return sideNavHtml;
+}
+```
+
+## 2024/8/9
+
+初步完成了 md 文件的导入和渲染。
+通过 fetch 来进行导入，url 为相对**public**文件夹的相对地址，而不是相对代码文件位置。使用 react-markdown 进行初步渲染，后续可以尝试增加渲染风格。
+
+遇到新的问题：
+
+- footer 组件无法置于页面底部，会挡住渲染出的 markdown 内容。
+- 还需要增加通过 navbar 进行 note 选择的功能。
+
+## 2024/8/10
+
+准备通过 css 样式修改，解决组件重叠等问题。
+
+通过排查，将 Navbar 的 flex='top'删除，mian-contianer 组件顺利按预期生成。将 Note 的 hight 样式删除，footer 自动位于最下方。
+遇到了与上传图片相同的问题，本地的笔记无法在 GitHub page 中获得，尝试通过 GitHub 链接进行抓取，但是需要 token，且临时 token 具有时效性。
+
+尝试生成 token：'\*\*\*' 失败，
+尝试将 note 上传至图床库进行尝试 **成功显示**。

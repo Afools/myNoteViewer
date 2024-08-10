@@ -6,8 +6,12 @@
 .App {
     font-family: Arial,"Microsoft YaHei";
 }
+
+h1{
+    user-select: none;
+}
 .Mainpage{
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -35,22 +39,27 @@
 /* .App{
     background-color: white;
 } */
-.navbar{
+.navbar,.side-nav{
     background-color: #c5c5c5 !important;
     color:#ffff !important;
 }
 .home-section{
-  position: relative;
+  /* position: relative; */
   font: 1em sans-serif;
   background: transparent;
   background-position: top center;
   background-repeat: no-repeat;
-  /* margin-top: 50px;
-  margin-bottom: 50px; */
   height: 80vh;
   width: 100%;
   padding-bottom: 30px !important;
   padding-top: 70px !important;
+}
+.main-container{
+    min-height: 70vh;
+    padding-top: 5vh;
+    margin-left: 5vw !important;
+    margin-right: 5vw !important;
+    
 }
 .github-icon{
     mask-image: url(./Asset/github-mark-small.svg);
@@ -60,13 +69,14 @@
     background-color: #0c0c0c;
     mask-position: center;
 }
-footer{
+.footer{
     width: 100vw !important;
-    position:relative;
+    /* position:relative; */
     /* color:rgb(75, 75, 75); */
     background-color: #c5c5c5 !important;
     height:20vh;
-    padding-top: 30px;
+    padding-top: 10px;
+    margin-top: 20px;
 }
 .visually-hidden {
     border: 0 !important;
@@ -82,19 +92,27 @@ footer{
     width: 1px !important;
 }
 
-.ai-main-page{
-    height:80vh !important;
+/* .note-main-page{
+    margin-top:0 !important;
+} */
+
+/* [class$=-main-page]{
+    min-height:80vh !important;
     width:100%;
     margin-top: 10vh;
     margin-bottom: 5vh;
-}
+    padding-bottom: 20vh;
+} */
 
-.anime-main-page{
-    height:80vh !important;
-    width:100%;
-    margin-top: 10vh;
-    margin-bottom: 5vh;
-
+.note-list-item{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    padding: 20px !important;
+    border-radius: 5px !important;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1) !important;
+    -webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
 }
 
 .card-img{
@@ -114,7 +132,7 @@ footer{
 	-o-transition: all 0.5s ease 0s;
 }
 
-.item-card:hover{
+.item-card:hover,.note-list-item:hover{
     -webkit-transition: all 0.5s ease 0s;
 	-moz-transition: all 0.5s ease 0s;
 	-o-transition: all 0.5s ease 0s;
@@ -125,6 +143,6 @@ footer{
 	transform: translate(-2px,-2px);
 	-webkit-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
 	-moz-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
-	-o-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
-	box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
+	-o-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5) !important;
+	box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5) !important;
 }

@@ -9,12 +9,11 @@ import {Link} from "react-router-dom"
 export default function NavBar(props){
     return(
            <Navbar
-           fixed='top'
            expand='md'
            className='navbar'
            >
-            <Container fluid>
-                <Navbar.Brand >LJ</Navbar.Brand>
+            <Container >
+                <Navbar.Brand style={{userSelect:"none",color:"#317e4a"}}>LeMat</Navbar.Brand>
                 <Navbar.Toggle aria-controls='responsive-navbar-nav'/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className='me-auto flex-row' navbarScroll>
@@ -24,6 +23,7 @@ export default function NavBar(props){
                             <NavDropdown.Item as={Link} to='/myTestSite/Front'>Front</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to='/myTestSite/Back'>Back</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to='/myTestSite/Project'>Project</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/myTestSite/Note'>Note</NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title='Entertainment' id="responsive-navbar-dropdown">
                             <NavDropdown.Item as={Link} to='/myTestSite/Anime'>Anime</NavDropdown.Item>

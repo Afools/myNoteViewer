@@ -5,11 +5,11 @@ import { Container,Row,Col,Card, CardBody,Button } from "react-bootstrap";
 export default function AI(props) {
     return (
         <section className="ai-main-page">
-            <Container>
+            <Container className="main-container">
                 <Row>
                     <Col md={{span:4}}>
-                        <h1 className="page-title">AI</h1>
-                        <p>这里分享一些AI相关项目</p>
+                        <h1 className="page-title" unselectable="on">AI</h1>
+                        <p unselectable="on">这里分享一些AI相关项目</p>
                     </Col>
                 </Row>
                 <Row className="ai-content" style={{borderTop:'1px solid black',paddingTop:'30px'}}>

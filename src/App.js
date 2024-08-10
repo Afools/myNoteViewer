@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import AI from './components/AI';
 import Anime from './components/Anime';
+import Note from './components/Note';
 import { useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -33,7 +34,9 @@ function App() {
             <Route path='/myTestSite/' element={<Home/>}/>
             <Route path='/myTestSite/AI' element={<AI/>}/>
             <Route path='/myTestSite/Anime' element={<Anime/>} />
+            <Route path='/myTestSite/Note' element={<Note/>} />
           </Routes>
+          <br/>
           <Footer/>
         </div>
       </Router>

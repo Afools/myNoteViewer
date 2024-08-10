@@ -3,12 +3,11 @@ import {Col, Row} from "react-bootstrap";
 
 export default function Home(props){
     return (
-        <section>
-            <Container fluid className="home-section" id="home">
+        <Container fluid className="main-container" id="home">
             <Row>
                 <Col md={6} className="home-header">
                     <h1 style={{paddingBottom:15}} className="heading">
-                        Welcom to the AFOOL's block.
+                        Welcom to the AFOOL's blog.
                         <span className="wave" role="img" aria-labelledby="wave">
                             👋🏻
                         </span>
@@ -17,10 +16,9 @@ export default function Home(props){
             </Row>
             <Row className="home-text">
                 <Col style={{fontSize:20}}>
-                I share some interesting things in this site.</Col>
+                I share some interesting things in this site. Beside, I use this site to learn and test some front-end tech.</Col>
 
             </Row>
-            </Container>
-        </section>
+        </Container>
     )
 }
