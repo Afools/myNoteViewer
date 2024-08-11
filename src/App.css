@@ -146,3 +146,14 @@ h1{
 	-o-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5) !important;
 	box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5) !important;
 }
+
+.note-body{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+}
