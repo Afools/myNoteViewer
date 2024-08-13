@@ -300,3 +300,5 @@ marked.use(
 ```
 
 - 增加代码块的样式：给代码块添加浅灰色背景，增加区分度。
+
+- 修改了 Projects 组件，通过 fetch 库中的 projects.json 来获得相关内容信息。可以便利的增加 project 内容了。

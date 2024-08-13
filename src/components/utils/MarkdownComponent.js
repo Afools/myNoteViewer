@@ -55,7 +55,4 @@ function MarkdownComponent(props) {
 );
 
 }
-    {/* <ReactMarkdown className={'markdown-body'}
-      children={htmlContent}
-    /> */}
 export default MarkdownComponent;
