@@ -1,11 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import {marked} from 'marked';
+import {markedHighlight} from 'marked-highlight';
 import ReactMarkdown from 'react-markdown';
 import { Container,Row,Col } from 'react-bootstrap';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github.css';
 
-// 将Markdown文件作为静态资源导入
-// const markdownContent = require('../notes/README.md');
+  const rendererMD = new marked.Renderer();
+  // Configure `marked` options
+  marked.use(markedHighlight({
+  langPrefix: 'hljs language-',
+  highlight(code, lang) {
+    const language = hljs.getLanguage(lang) ? lang : 'shell'
+    return hljs.highlight(code, { language }).value
+  }
+}));
+  marked.setOptions({
+      renderer: rendererMD,
+      gfm: true,
+      tables: true,
+      breaks: false,
+      pedantic: false,
+      sanitize: false,
+      smartLists: true,
+      smartypants: false,
 
+  });
 function MarkdownComponent(props) {
   const [htmlContent, setHtmlContent] = useState('');
 
@@ -13,25 +33,29 @@ function MarkdownComponent(props) {
     fetch(props.url)
       .then((response) => response.text())
       .then((text) => {
-        setHtmlContent(text);
+        const renderedhtml=marked(text);
+        setHtmlContent(renderedhtml);
       });
       
   
   }, []);
   return (
   <Container className="note-body">
-      <Row>
-        <Col md={{offset:11}}>
+    {/* <Row>
+      <Col md={{offset:11}} xs={{offset:11}}>
         <button onClick={()=>props.setActivate(1)}>Back</button>
-        </Col>
-      </Row>
-      <Row>
-    <ReactMarkdown className={'markdown-body'}
-      children={htmlContent}
-    /></Row>
+      </Col>
+    </Row> */}
+    <Row>
+      <Col>
+        <div className="markdown-body" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      </Col>
+    </Row>
   </Container>
-  );
+);
 
 }
-
+    {/* <ReactMarkdown className={'markdown-body'}
+      children={htmlContent}
+    /> */}
 export default MarkdownComponent;

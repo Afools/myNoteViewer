@@ -21,19 +21,22 @@ export default function NoteList(props){
     //     tags: ["React", "Bootstrap", "JavaScript", "HTML", "CSS"],
     //     date: "2024-03-29"
     // }]
-    const [notes, setNotes] = useState([]);
+    // const [notes, setNotes] = useState([]);
 
-    useEffect(() => {
-        fetch("https://raw.githubusercontent.com/Afools/pictureRepo/main/noteList.json")
-            .then((response) => response.json())
-            .then((data) => {
-                setNotes(data);
-            })
-            .catch((error) => console.error("Error fetching the JSON file:", error));
-    }, []); // Empty dependency array means this effect runs once on mount
+    // useEffect(() => {
+    //     fetch("https://raw.githubusercontent.com/Afools/pictureRepo/main/noteList.json")
+    //         .then((response) => response.json())
+    //         .then((data) => {
+    //             setNotes(data);
+    //         })
+    //         .catch((error) => console.error("Error fetching the JSON file:", error));
+    // }, [props.eventKey]); // Empty dependency array means this effect runs once on mount
+    if (!props.data || !props.data[0] || !props.data[0].notes) {
+        return <div>Loading...</div>; // You can return a loading state or nothing if the data is not yet available
+    }
     const notehtml=(
         <ListGroup as="ul">
-            {notes.map((note)=>(
+            {props.data[props.eventKey].notes.map((note)=>(
                 <NoteItem title={note.title} url={note.url} setActivate={props.setActivate} setUrl={props.setUrl}/>
             ))}
         </ListGroup>

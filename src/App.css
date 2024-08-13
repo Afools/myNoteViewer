@@ -39,9 +39,15 @@ h1{
 /* .App{
     background-color: white;
 } */
-.navbar,.side-nav{
+.navbar{
+    top:0 !important;
     background-color: #c5c5c5 !important;
     color:#ffff !important;
+}
+
+.navbar-container{
+    margin-left: 5vw !important;
+    margin-right: 5vw !important;
 }
 .home-section{
   /* position: relative; */
@@ -57,6 +63,7 @@ h1{
 .main-container{
     min-height: 70vh;
     padding-top: 5vh;
+    width: auto !important;
     margin-left: 5vw !important;
     margin-right: 5vw !important;
     
@@ -76,7 +83,7 @@ h1{
     background-color: #c5c5c5 !important;
     height:20vh;
     padding-top: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .visually-hidden {
     border: 0 !important;
@@ -156,4 +163,46 @@ h1{
     -webkit-transition: all 0.5s ease 0s;
     -moz-transition: all 0.5s ease 0s;
     -o-transition: all 0.5s ease 0s;
+}
+
+/* Side Navigation */
+
+.fixed-accordion {
+    position: fixed;
+    top: 13vh; /* 根据需要调整 */
+    left: 8vh; /* 根据需要调整 */
+    width: 200px; /* 根据需要调整 */
+    height: 100%; /* 根据需要调整 */
+    overflow-y: auto; /* 如果内容超出高度，添加滚动条 */
+    z-index: 1000; /* 确保它在其他内容之上 */
+
+
+}
+.flex-column{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+}
+.nav-link:hover{
+    -webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+	-webkit-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
+	-moz-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
+	-o-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5) !important;
+	box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5) !important;
+}
+
+.markdown-body pre{
+    background-color: #f6f8fa;
+    padding: 5px;
 }

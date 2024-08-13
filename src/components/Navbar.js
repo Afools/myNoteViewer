@@ -12,17 +12,14 @@ export default function NavBar(props){
            expand='md'
            className='navbar'
            >
-            <Container >
-                <Navbar.Brand style={{userSelect:"none",color:"#317e4a"}}>LeMat</Navbar.Brand>
+            <Container className='navbar-container'>
+                <Navbar.Brand style={{userSelect:"none",color:"#317e4a"}}>LeMat    </Navbar.Brand>
                 <Navbar.Toggle aria-controls='responsive-navbar-nav'/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className='me-auto flex-row' navbarScroll>
                         <Nav.Link as={Link} to='/myTestSite/'>Home</Nav.Link>
                         <NavDropdown title='TECH' id="responsive-navbar-dropdown">
-                            <NavDropdown.Item as={Link} to='/myTestSite/AI'>AI</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to='/myTestSite/Front'>Front</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to='/myTestSite/Back'>Back</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to='/myTestSite/Project'>Project</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/myTestSite/Projects'>Project</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to='/myTestSite/Note'>Note</NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title='Entertainment' id="responsive-navbar-dropdown">
