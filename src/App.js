@@ -31,11 +31,11 @@ function App() {
           <div id={load? "preload":"preload-non"}/>
           <NavBar currPage={currPage} setCurrPage={setCurrPage}/>
           <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/myTestSite/' element={<Home/>}/>
-            <Route path='/myTestSite/Projects' element={<Projects/>}/>
+            <Route path='/' element={<Note/>}/>
+            {/* <Route path='/myNoteViwer/' element={<Home/>}/>
+            <Route path='/myNoteViwer/Projects' element={<Projects/>}/> */}
             {/* <Route path='/myTestSite/Anime' element={<Anime/>} /> */}
-            // <Route path='/myTestSite/Note' element={<Note/>} /> 
+            {/* // <Route path='/myNoteViwer/Note' element={<Note/>} />  */}
           </Routes>
           <Footer/>
         </div>

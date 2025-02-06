@@ -13,8 +13,8 @@ export default function NavBar(props){
            className='navbar'
            >
             <Container className='navbar-container'>
-                <Navbar.Brand >LeMat    </Navbar.Brand>
-                <Navbar.Toggle aria-controls='responsive-navbar-nav'/>
+                <Navbar.Brand >MyNoteViewer    </Navbar.Brand>
+                {/* <Navbar.Toggle aria-controls='responsive-navbar-nav'/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className='me-auto flex-row' navbarScroll>
                         <Nav.Link 
@@ -42,7 +42,7 @@ export default function NavBar(props){
                             Note
                         </Nav.Link>
                     </Nav>
-                </Navbar.Collapse>
+                </Navbar.Collapse> */}
             </Container>
            </Navbar> 
     )
