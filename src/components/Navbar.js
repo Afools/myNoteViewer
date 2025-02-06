@@ -17,26 +17,31 @@ export default function NavBar(props){
                 <Navbar.Toggle aria-controls='responsive-navbar-nav'/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className='me-auto flex-row' navbarScroll>
-                        <Nav.Link as={Link} to='/myTestSite/'>Home</Nav.Link>
-                        <NavDropdown title='TECH' id="responsive-navbar-dropdown">
-                            <NavDropdown.Item as={Link} to='/myTestSite/Projects'>Project</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to='/myTestSite/Note'>Note</NavDropdown.Item>
-                        </NavDropdown>
-                        <NavDropdown title='Entertainment' id="responsive-navbar-dropdown">
-                            <NavDropdown.Item as={Link} to='/myTestSite/Anime'>Anime</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to='/myTestSite/Comic_and_Novel'>Novel</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to='/myTestSite/Game'>Game</NavDropdown.Item>
-                        </NavDropdown>
+                        <Nav.Link 
+                            as={Link} 
+                            to='/myTestSite/' 
+                            className={props.currPage === 'Home' ? 'currPage' : ''} 
+                            onClick={() => props.setCurrPage('Home')}
+                        >
+                            Home
+                        </Nav.Link>
+                        <Nav.Link
+                            as={Link} 
+                            to='/myTestSite/Projects'
+                            className={props.currPage === 'Projects' ? 'currPage' : ''}
+                            onClick={() => props.setCurrPage('Projects')}
+                        >
+                            Project
+                        </Nav.Link>
+                        <Nav.Link 
+                            as={Link} 
+                            to='/myTestSite/Note'
+                            className={props.currPage === 'Note' ? 'currPage' : ''}
+                            onClick={() => props.setCurrPage('Note')}
+                        >
+                            Note
+                        </Nav.Link>
                     </Nav>
-                    <Form className="d-flex">
-                        <Form.Control
-                        type="search"
-                        placeholder="Search"
-                        className="me-2"
-                        aria-label="Search"
-                        />
-                        <Button variant="outline-success">Search</Button>
-                    </Form>
                 </Navbar.Collapse>
             </Container>
            </Navbar> 

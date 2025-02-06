@@ -5,6 +5,7 @@
 }
 .App {
     font-family: Arial,"Microsoft YaHei";
+    --navbar-height: 48px;
 }
 
 h1{
@@ -36,18 +37,29 @@ h1{
     background-repeat: no-repeat;
     background-position: center;
 }
-/* .App{
-    background-color: white;
-} */
+
+/****************/
+/* Navbar Style */
+/****************/
+
 .navbar{
     top:0 !important;
     background-color: #c5c5c5 !important;
+    width: 100vw !important;
     color:#ffff !important;
+    position: sticky !important;
+    height: var(--navbar-height) !important;
+    z-index: 1000 !important;
 }
 
 .navbar-container{
     margin-left: 5vw !important;
     margin-right: 5vw !important;
+}
+
+.currPage{
+    color: #317e4a !important;
+    font-weight: bold !important;
 }
 .home-section{
   /* position: relative; */
@@ -60,14 +72,7 @@ h1{
   padding-bottom: 30px !important;
   padding-top: 70px !important;
 }
-.main-container{
-    min-height: 70vh;
-    padding-top: 5vh;
-    width: auto !important;
-    margin-left: 5vw !important;
-    margin-right: 5vw !important;
-    
-}
+
 .github-icon{
     mask-image: url(./Asset/github-mark-small.svg);
     display: block;
@@ -83,7 +88,7 @@ h1{
     background-color: #c5c5c5 !important;
     height:20vh;
     padding-top: 10px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 .visually-hidden {
     border: 0 !important;
@@ -99,9 +104,6 @@ h1{
     width: 1px !important;
 }
 
-/* .note-main-page{
-    margin-top:0 !important;
-} */
 
 /* [class$=-main-page]{
     min-height:80vh !important;
@@ -110,17 +112,15 @@ h1{
     margin-bottom: 5vh;
     padding-bottom: 20vh;
 } */
-
-.note-list-item{
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
-    padding: 20px !important;
-    border-radius: 5px !important;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1) !important;
-    -webkit-transition: all 0.5s ease 0s;
-	-moz-transition: all 0.5s ease 0s;
-	-o-transition: all 0.5s ease 0s;
+.main-container{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    /* padding-top:var(--navbar-height); */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
+
 
 .card-img{
     width:18rem;
@@ -154,6 +154,31 @@ h1{
 	box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5) !important;
 }
 
+/*************/
+/* Home Page */
+/*************/
+
+#home{
+    flex-direction: column;
+    padding-top:3vh;
+}
+
+/*************/
+/* Note Page */
+/*************/
+
+.note-list-item{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    padding: 20px !important;
+    border-radius: 5px !important;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1) !important;
+    -webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+    width: 60vw;
+}
+
 .note-body{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -165,27 +190,39 @@ h1{
     -o-transition: all 0.5s ease 0s;
 }
 
+.note-body-container{
+    display: flex;
+    width: 75vw;
+    padding-top:2vh;
+}
+
+/*******************/
 /* Side Navigation */
+/*******************/
 
 .fixed-accordion {
-    position: fixed;
-    top: 13vh; /* 根据需要调整 */
-    left: 8vh; /* 根据需要调整 */
-    width: 200px; /* 根据需要调整 */
-    height: 100%; /* 根据需要调整 */
+    position: sticky;
+    top: var(--navbar-height);
+    padding: 1rem;
+    left: 0vw;
+    width: 18vw; /* 根据需要调整 */
+    height: 100vh; /* 根据需要调整 */
     overflow-y: auto; /* 如果内容超出高度，添加滚动条 */
-    z-index: 1000; /* 确保它在其他内容之上 */
-
-
+    z-index: 10; /* 确保它在其他内容之上 */
+    background-color: #c5c5c5;
+    margin-right: 2vw;
 }
 .flex-column{
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     -webkit-transition: all 0.5s ease 0s;
     -moz-transition: all 0.5s ease 0s;
     -o-transition: all 0.5s ease 0s;
+}
+.accordion-item{
+    background-color: #c5c5c5 !important;
+    border: 0 !important;
 }
 .nav-link:hover{
     -webkit-transition: all 0.5s ease 0s;
@@ -206,3 +243,18 @@ h1{
     background-color: #f6f8fa;
     padding: 5px;
 }
+
+/**************/
+/* Anime Page */
+/**************/
+
+#anime{
+    flex-direction: column;
+}
+
+/**************/
+/* Project Page */
+/**************/
+#project{
+    flex-direction: column;
+}   

@@ -12,13 +12,8 @@ export default function Projects(props) {
     })
 
     return (
-        <section >
-            <Container className="main-container">
-                <Row>
-                    <Col md={{span:4}}>
-                        <h1 className="page-title" unselectable="on">Projects</h1>
-                    </Col>
-                </Row>
+            <Container className="main-container" id="project">
+
                 <Row className="ai-content" style={{borderTop:'1px solid black',paddingTop:'30px'}}>
                     {data.map((item,index)=>(
                         <Col>
@@ -40,7 +35,5 @@ export default function Projects(props) {
                     </Col> */}
                 </Row>
             </Container>
-
-        </section>
     )
 }

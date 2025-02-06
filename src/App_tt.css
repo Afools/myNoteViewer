@@ -1,0 +1,59 @@
+/* 全局样式 */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.App-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* 根据需要调整 */
+    background-color: #c5c5c5;
+    z-index: 1000;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    margin-top: 60px; /* 与header高度一致 */
+    overflow-y: auto; /* 允许内容滚动 */
+}
+
+.fixed-accordion {
+    position: fixed;
+    top: 60px; /* 与header高度一致 */
+    left: 0;
+    width: 20%; /* 根据需要调整 */
+    height: calc(100% - 60px); /* 减去header高度 */
+    overflow-y: auto;
+    z-index: 1000;
+    background-color: #282c34;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.main-container {
+    margin-left: 20%; /* 与侧边栏宽度一致 */
+    width: 80%; /* 剩余宽度 */
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100% - 60px); /* 减去header高度 */
+}
+
+.note-body-container {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+/* 其他样式保持不变 */

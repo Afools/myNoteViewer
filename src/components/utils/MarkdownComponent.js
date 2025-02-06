@@ -41,11 +41,6 @@ function MarkdownComponent(props) {
   }, []);
   return (
   <Container className="note-body">
-    {/* <Row>
-      <Col md={{offset:11}} xs={{offset:11}}>
-        <button onClick={()=>props.setActivate(1)}>Back</button>
-      </Col>
-    </Row> */}
     <Row>
       <Col>
         <div className="markdown-body" dangerouslySetInnerHTML={{ __html: htmlContent }} />

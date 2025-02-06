@@ -7,7 +7,7 @@ export default function Home(props){
             <Row>
                 <Col md={6} className="home-header">
                     <h1 style={{paddingBottom:15}} className="heading">
-                        Welcom to the AFOOL's blog.
+                        Welcom to my site.
                         <span className="wave" role="img" aria-labelledby="wave">
                             👋🏻
                         </span>
@@ -16,7 +16,7 @@ export default function Home(props){
             </Row>
             <Row className="home-text">
                 <Col style={{fontSize:20}}>
-                I share some interesting things in this site. Beside, I use this site to learn and test some front-end tech.</Col>
+                I share some notes in this site and use this site to learn and test some front-end tech.</Col>
 
             </Row>
         </Container>

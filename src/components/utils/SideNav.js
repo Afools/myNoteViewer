@@ -31,6 +31,7 @@ function SideNavItem(props) {
             <Nav.Link onClick={()=>{
                 props.setEventKey(props.eventKey);
                 props.setActivate(1);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }}>{props.noteBook}</Nav.Link>
         </Accordion.Item>
     )

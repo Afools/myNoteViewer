@@ -15,6 +15,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   const [load,upadateLoad] = useState(true)
+  const [currPage,setCurrPage] = useState('Home')
   useEffect(() => {
     const timer = setTimeout(() => {
       upadateLoad(false);
@@ -28,15 +29,14 @@ function App() {
         <div className="App">
           <header className="App-header"/>
           <div id={load? "preload":"preload-non"}/>
-          <NavBar/>
+          <NavBar currPage={currPage} setCurrPage={setCurrPage}/>
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/myTestSite/' element={<Home/>}/>
             <Route path='/myTestSite/Projects' element={<Projects/>}/>
-            <Route path='/myTestSite/Anime' element={<Anime/>} />
-            <Route path='/myTestSite/Note' element={<Note/>} />
+            {/* <Route path='/myTestSite/Anime' element={<Anime/>} /> */}
+            // <Route path='/myTestSite/Note' element={<Note/>} /> 
           </Routes>
-          <br/>
           <Footer/>
         </div>
       </Router>
