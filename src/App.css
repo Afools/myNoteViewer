@@ -6,6 +6,7 @@
 .App {
     font-family: Arial,"Microsoft YaHei";
     --navbar-height: 48px;
+    --theme-color: #c5c5c5
 }
 
 h1{
@@ -44,7 +45,7 @@ h1{
 
 .navbar{
     top:0 !important;
-    background-color: #c5c5c5 !important;
+    background-color: var(--theme-color) !important;
     width: 100vw !important;
     color:#ffff !important;
     position: sticky !important;
@@ -85,7 +86,7 @@ h1{
     width: 100vw !important;
     /* position:relative; */
     /* color:rgb(75, 75, 75); */
-    background-color: #c5c5c5 !important;
+    background-color: var(--theme-color) !important;
     height:20vh;
     padding-top: 10px;
     /* margin-top: 10px; */
@@ -205,11 +206,11 @@ h1{
     top: var(--navbar-height);
     padding: 1rem;
     left: 0vw;
-    width: 18vw; /* 根据需要调整 */
+    width: 250px; /* 根据需要调整 */
     height: 100vh; /* 根据需要调整 */
     overflow-y: auto; /* 如果内容超出高度，添加滚动条 */
     z-index: 10; /* 确保它在其他内容之上 */
-    background-color: #c5c5c5;
+    background-color: var(--theme-color);
     margin-right: 2vw;
 }
 .flex-column{
@@ -221,7 +222,7 @@ h1{
     -o-transition: all 0.5s ease 0s;
 }
 .accordion-item{
-    background-color: #c5c5c5 !important;
+    background-color: var(--theme-color) !important;
     border: 0 !important;
 }
 .nav-link:hover{
@@ -237,6 +238,14 @@ h1{
 	-moz-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5);
 	-o-box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5) !important;
 	box-shadow: 5px 5px 15px rgba(67, 72, 84, 0.5) !important;
+}
+
+.flex-column .nav-link{
+    color: #3f4145 !important;
+}
+.flex-column .side-nav-activate{
+    font-weight: bold !important;
+
 }
 
 .markdown-body pre{
