@@ -32,6 +32,7 @@ function App() {
           <NavBar currPage={currPage} setCurrPage={setCurrPage}/>
           <Routes>
             <Route path='/' element={<Note/>}/>
+            <Route path='/myNoteViewer/' element={<Note/>}/>
             {/* <Route path='/myNoteViwer/' element={<Home/>}/>
             <Route path='/myNoteViwer/Projects' element={<Projects/>}/> */}
             {/* <Route path='/myTestSite/Anime' element={<Anime/>} /> */}
