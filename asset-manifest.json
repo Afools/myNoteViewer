@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.36b1170a.css",
-    "main.js": "./static/js/main.dad3109d.js",
+    "main.js": "./static/js/main.bd22e56a.js",
     "static/js/358.6c3c63ca.chunk.js": "./static/js/358.6c3c63ca.chunk.js",
     "static/media/KaTeX_AMS-Regular.ttf": "./static/media/KaTeX_AMS-Regular.853be92419a6c3766b9a.ttf",
     "static/media/KaTeX_Main-Regular.ttf": "./static/media/KaTeX_Main-Regular.9eba1d77abcf2aa6e94e.ttf",
@@ -67,11 +67,11 @@
     "static/media/github-mark-small.svg": "./static/media/github-mark-small.348586b8904b950b8ea8.svg",
     "index.html": "./index.html",
     "main.36b1170a.css.map": "./static/css/main.36b1170a.css.map",
-    "main.dad3109d.js.map": "./static/js/main.dad3109d.js.map",
+    "main.bd22e56a.js.map": "./static/js/main.bd22e56a.js.map",
     "358.6c3c63ca.chunk.js.map": "./static/js/358.6c3c63ca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.36b1170a.css",
-    "static/js/main.dad3109d.js"
+    "static/js/main.bd22e56a.js"
   ]
 }
