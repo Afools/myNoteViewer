@@ -6,7 +6,8 @@
 .App {
     font-family: Arial,"Microsoft YaHei";
     --navbar-height: 48px;
-    --theme-color: #c5c5c5
+    --theme-color: #c5c5c5;
+    --highlight-color: #317e4a;
 }
 
 h1{
@@ -24,7 +25,7 @@ h1{
     text-align: center;
 }
 .page-title{
-    color: #317e4a
+    color: var(--highlight-color);
 }
 #preload{
     position: fixed;
@@ -53,13 +54,20 @@ h1{
     z-index: 1000 !important;
 }
 
+.navbar-brand{
+    color: var(--highlight-color) !important;
+    font-weight: bold !important;
+    margin-right: 4vw !important;
+
+}
+
 .navbar-container{
-    margin-left: 5vw !important;
+    margin-left: 1.5vw !important;
     margin-right: 5vw !important;
 }
 
 .currPage{
-    color: #317e4a !important;
+    color: var(--highlight-color) !important;
     font-weight: bold !important;
 }
 .home-section{
@@ -197,6 +205,31 @@ h1{
     padding-top:2vh;
 }
 
+.markdown-body h1,h2{
+    border-bottom: 1px solid #d1d9e0b3;
+    margin-top: 1.5rem !important;
+}
+
+.markdown-body table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+.markdown-body th, .markdown-body td {
+    padding: 12px 15px;
+    border: 2px solid #000; /* 修改表格线的颜色和宽度 */
+}
+
+.markdown-body th {
+    background-color: #c1c1c1; /* 表头背景颜色 */
+    font-weight: bold;
+}
+
+.markdown-body tr:nth-child(even) {
+    background-color: #e5e5e5; /* 偶数行背景颜色 */
+}
 /*******************/
 /* Side Navigation */
 /*******************/

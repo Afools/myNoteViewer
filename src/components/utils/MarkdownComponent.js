@@ -1,31 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import {marked} from 'marked';
-import {markedHighlight} from 'marked-highlight';
-import ReactMarkdown from 'react-markdown';
+import Markdown from 'react-markdown';
 import { Container,Row,Col } from 'react-bootstrap';
-import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css';
+import 'katex/dist/katex.min.css';
+import remarkMath from 'remark-math';
+import remarkGfm from 'remark-gfm';
+import rehypeKatex from 'rehype-katex';
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
+import {nord} from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-  const rendererMD = new marked.Renderer();
-  // Configure `marked` options
-  marked.use(markedHighlight({
-  langPrefix: 'hljs language-',
-  highlight(code, lang) {
-    const language = hljs.getLanguage(lang) ? lang : 'shell'
-    return hljs.highlight(code, { language }).value
-  }
-}));
-  marked.setOptions({
-      renderer: rendererMD,
-      gfm: true,
-      tables: true,
-      breaks: false,
-      pedantic: false,
-      sanitize: false,
-      smartLists: true,
-      smartypants: false,
 
-  });
 function MarkdownComponent(props) {
   const [htmlContent, setHtmlContent] = useState('');
 
@@ -33,8 +17,8 @@ function MarkdownComponent(props) {
     fetch(props.url)
       .then((response) => response.text())
       .then((text) => {
-        const renderedhtml=marked(text);
-        setHtmlContent(renderedhtml);
+
+        setHtmlContent(text);
       });
       
   
@@ -43,7 +27,32 @@ function MarkdownComponent(props) {
   <Container className="note-body">
     <Row>
       <Col>
-        <div className="markdown-body" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+        {/* <div className="markdown-body" dangerouslySetInnerHTML={{ __html: htmlContent }} /> */}
+        <Markdown
+          remarkPlugins={[remarkMath, remarkGfm]}
+          rehypePlugins={[rehypeKatex]}
+          children={htmlContent}
+          className="markdown-body"
+          components={{
+            code(props) {
+              const {children, className, node, ...rest} = props
+              const match = /language-(\w+)/.exec(className || '')
+              return match ? (
+                <SyntaxHighlighter
+                  {...rest}
+                  PreTag="div"
+                  children={String(children).replace(/\n$/, '')}
+                  language={match[1]}
+                  style={nord}
+                />
+              ) : (
+                <code {...rest} className={className}>
+                  {children}
+                </code>
+              )
+            }
+          }}
+        />
       </Col>
     </Row>
   </Container>

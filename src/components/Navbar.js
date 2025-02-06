@@ -13,7 +13,7 @@ export default function NavBar(props){
            className='navbar'
            >
             <Container className='navbar-container'>
-                <Navbar.Brand style={{userSelect:"none",color:"#317e4a"}}>LeMat    </Navbar.Brand>
+                <Navbar.Brand >LeMat    </Navbar.Brand>
                 <Navbar.Toggle aria-controls='responsive-navbar-nav'/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className='me-auto flex-row' navbarScroll>
